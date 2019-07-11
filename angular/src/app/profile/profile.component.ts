@@ -87,6 +87,7 @@ export class ProfileComponent implements OnInit {
     this.authService.getProfile().subscribe( profile =>{
       this.user = profile.user  ;
       this.name = profile.user.name;
+      console.log(this.user);
       if(profile.user.type == "Admin of Department"){
         this.isAdmin = true;
         this.isWorker = false;

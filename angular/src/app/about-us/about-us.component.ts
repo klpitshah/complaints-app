@@ -41,13 +41,13 @@ export class AboutUsComponent implements OnInit {
 
   private groupInfo = [
     {
-      "name" : "Vaishvik k. brahmbhatt",
+      "name" : "Vaishvik K. Brahmbhatt",
       "id" : "201601459",
       "role" : "Full stack developer"
     },
     {
-      "name" : "Kalpit shah",
-      "id" : "201601459",
+      "name" : "Kalpit Shah",
+      "id" : "201601441",
       "role" : "Full stack developer"
     }
   ]
