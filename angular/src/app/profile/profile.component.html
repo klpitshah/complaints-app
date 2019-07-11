@@ -1,0 +1,249 @@
+<br>
+<div *ngIf="isWorker && !showDiv && showDivWorker" style="background-color: rgb(250, 249, 249)">
+    <br>
+        <h5 class="btn btn-primary" style="display: block; margin: 0 auto; display: flex;
+        justify-content: center;
+        align-items: center;"> COMPLAIN : {{selectedComplainWorker?.complainName}}
+            <br>
+            <button (click)="hide2()" style="margin-left: auto; display: block;" >Move to Profile</button>
+        </h5>
+        <br>
+        <ul class="list-group">
+                <li class="list-group-item">NAME : {{selectedComplainWorker?.complainerName}}</li>
+                <li class="list-group-item">Category : {{selectedComplainWorker?.type}}</li>
+                <li class="list-group-item">Worker Name : {{selectedComplainWorker?.workerName}}</li>
+                
+        </ul>  
+        <br>
+        <br>
+
+        <h3 style="display: block; margin: 0 auto; display: flex;
+        justify-content: center;
+        align-items: center;"> PROGRESS BAR SELECTOR : {{selectedComplainWorker?.status}} % WORK Completed .</h3>
+        <p> Here 0 indicates that phase 1 is just started. 25 indicates your quater of work is completed means phase 1 is finished. Where 50 and 75 state that phase2 and phase3 is completed respcetively. 100 shows that your complain successfully done by worker.</p>
+            <div *ngIf="!workIsDone" style="display: block; margin: 0 auto; display: flex;
+            justify-content: center;
+            align-items: center;">
+                <select [(ngModel)]="progValue" progValue="progValue" [ngModelOptions]="{standalone: true}" >
+                        <option *ngFor="let item of progArr" value= {{item}}  >
+                        {{item}}
+                        </option>
+                </select>
+                <br>
+                <br>
+                <button (click)="giveProg(selectedComplainWorker?.complainId)">Go</button> 
+            </div>
+            <div *ngIf="workIsDone" style="display: block; margin: 0 auto; display: flex;
+            justify-content: center;
+            align-items: center;">
+                <h1 style="color: red">YOUR COMPLAIN IS SUCCESSFULLY COMPLETED !!!</h1>
+            </div>
+
+    <br>
+    <br>
+    <hr>
+</div>
+<br>
+<div *ngIf="isAdmin && showDiv && !showDivWorker" style="background-color: rgb(250, 249, 249)">
+    
+        <h5 class="btn btn-primary" style="display: block; margin: 0 auto; display: flex;
+        justify-content: center;
+        align-items: center;"> COMPLAIN : {{selectedItem?.complainName}}
+            <br>
+            <button (click)="hide()" style="margin-left: auto; display: block;" >Move to Profile</button>
+        </h5>
+        <ul class="list-group">
+                <li class="list-group-item">NAME : {{selectedItem?.complainerName}}</li>
+                <li class="list-group-item">Category : {{selectedItem?.type}}</li>
+        </ul>  
+
+        <table style="display: block; margin: 0 auto; display: flex;
+        justify-content: center;
+        align-items: center;" border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+                <tr>
+                <th>Name</th>
+                <th> Assign Work </th>
+                </tr>
+    
+                <tr *ngFor="let item of selectedWorkers">
+                <td> {{item.name}} </td>
+                <td> <button class="btn btn-danger" (click)="assignWork(item)"> &#9830; </button></td>
+                </tr>
+        </table>
+
+    <br>
+    <br>
+    <hr>
+</div>
+
+<div *ngIf="user && !showDiv && !showDivWorker">
+  <h2 class="page-header" >Hello , {{user.username}} . </h2>
+      <br>
+      <ul class="list-group">
+          <li class="list-group-item">NAME : {{user.name}}</li>
+          <li class="list-group-item">EMAIL : {{user.email}}</li> 
+          <li class="list-group-item">Category : {{user.category}}</li>
+          <li class="list-group-item">Account type : {{user.type}}</li>
+      </ul>  
+
+      <br>
+      <br>
+      <p> Only Account type with USER can register or can do COMPLAIN our website.</p>
+      <button *ngIf="user_type" class="btn btn-primary" style="display: block; margin: 0 auto; display: flex;
+      justify-content: center;
+      align-items: center;" (click)="addComplain()"> Add Complain </button>
+      <hr>
+      <br>
+      <br>
+      <h4 *ngIf="!isAdmin && !isWorker"> VIEW MY COMPLAINS : </h4>
+        <div *ngIf="!isAdmin && !isWorker" style="display: block; margin: 0 auto; display: flex;
+        justify-content: center;
+        align-items: center;">
+        
+            <br>
+            <table border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+            <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Assigned</th>
+            <th>Completed</th>
+            <th>View Progress</th>
+            </tr>
+
+            <tr *ngFor="let item of complains">
+            <td> {{item.complainName}} </td>
+            
+            <td> {{item.type}}</td>
+            <td> {{item.status}}</td>
+            <td>{{item.assigned}}</td>
+            <td>{{item.completed}}</td>
+            <td> <button class="btn btn-danger" (click)="viewComplain(item.id)"> VIEW </button></td>
+            </tr>
+            </table>
+            <hr>
+            <br>
+            <br>
+        </div>
+        <h4 *ngIf="isAdmin"> VIEW MY WORKERS : </h4>
+          <div *ngIf="isAdmin" style="display: block; margin: 0 auto; display: flex;
+          justify-content: center;
+          align-items: center;">
+          
+              <br>
+              <table border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+              <tr>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Status</th>
+              </tr>
+  
+              <tr *ngFor="let item of workers">
+              <td> {{item.name}} </td>
+              <td> {{item.username}}</td>
+              <td> {{item.category}}</td>
+              </tr>
+              </table>
+              <hr>
+              <br>
+              <br>
+          </div>
+
+          <h4 *ngIf="isAdmin"> VIEW ALL COMPLAINS : </h4>
+          <p  *ngIf="isAdmin" style="color: red">Admin you need to select suitable worker for corrospoding complains.</p>
+            <div *ngIf="isAdmin" style="display: block; margin: 0 auto; display: flex;
+            justify-content: center;
+            align-items: center;">
+            
+                <br>
+                <table border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+                        <tr>
+                        <th>Name</th>
+                        <th>Complainer Name</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>View Progress</th>
+                        <th> Assign Worker </th>
+                        </tr>
+            
+                        <tr *ngFor="let item of nonAssComplains">
+                        <td> {{item.complainName}} </td>
+                        <td>{{item.complainerName}}</td>
+                        <td> {{item.type}}</td>
+                        <td> {{item.status}}</td>
+                        <td> <button class="btn btn-danger" (click)="viewComplain(item.id)"> VIEW </button></td>
+                        <td>    <button type="button" class="btn btn-success" (click)="ViewDiv(item)" >
+                                    Assign
+                                </button>
+                        </td>
+                        </tr>
+                </table>
+                <hr>
+                <br>
+                <br>
+   
+        </div>
+
+  <h4 *ngIf="isAdmin"> VIEW ALL Assinged COMPLAINS : </h4>
+    <div *ngIf="isAdmin" style="display: block; margin: 0 auto; display: flex;
+    justify-content: center;
+    align-items: center;">
+    
+        <br>
+        <table border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+                <tr>
+                <th>Name</th>
+                <th>Complainer Name</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>View Progress</th>
+                </tr>
+    
+                <tr *ngFor="let item of assignedComplains">
+                <td> {{item.complainName}} </td>
+                <td>{{item.complainerName}}</td>
+                <td> {{item.type}}</td>
+                <td> {{item.status}}</td>
+                <td> <button class="btn btn-danger" (click)="viewComplain(item.id)"> VIEW </button></td>
+                </tr>
+        </table>
+        <br>
+        <br>
+        <hr>
+
+    </div>
+
+    <h4 *ngIf="isWorker"> VIEW ALL Assinged COMPLAINS that are assigned to me ! : </h4>
+      <div *ngIf="isWorker" style="display: block; margin: 0 auto; display: flex;
+      justify-content: center;
+      align-items: center;">
+      
+          <br>
+          <table border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+                  <tr>
+                  <th>Complain Name</th>
+                  <th>Complainer Name</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Time</th>
+                  <th> Progress bar of this Complain </th>
+                  </tr>
+      
+                  <tr *ngFor="let item of workersComplain">
+                  <td> {{item.complainName}} </td>
+                  <td>{{item.complainerName}}</td>
+                  <td> {{item.type}}</td>
+                  <td> {{item.status}}</td>
+                  <td> {{item.time}}</td>
+                  <td>    <button type="button" class="btn btn-success" (click)="ViewDivWorker(item)" >
+                        GO
+                    </button>
+            </td>
+                  </tr>
+          </table>
+  
+  
+      </div>
+    
+<br>
+<br>  

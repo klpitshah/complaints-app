@@ -1,0 +1,111 @@
+<br>
+<div class="about-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>About Us</h1>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="left-image" style="display: block; margin: 0 auto; background-color: wgite; display: flex;
+        justify-content: center;
+        align-items: center;" >
+          <img src="https://tse4.mm.bing.net/th?id=OIP.DDyE6SSrk5vlk3dQtdEvMgHaEK&pid=Api&P=0&w=324&h=183" alt="">
+        </div>
+        <br>
+        <div  style="display: block; margin: 0 auto; background-color: wgite; display: flex;
+        justify-content: center;
+        align-items: center;" >
+        <table border = "1" cellpadding = "5" cellspacing = "5" bgcolor = "white" width="50%">
+            <tr>
+                <th>Group Member</th>
+                <th>ID</th>
+                <th>Role</th>
+
+        
+            </tr>
+        
+            <tr *ngFor="let item of groupInfo">
+                <td> {{item.name}} </td>
+                <td> {{item.id}} </td>
+                <td> {{item.role}} </td>
+
+            </tr>
+        </table>     
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="right-content">
+          <h4>The application for online complain ->  <a rel="nofollow" [routerLink]="['/']" > The Complain App </a> </h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem voluptatem repellendus natus quibusdam sequi architecto accusamus harum. Eos hic suscipit sequi eius minus consequuntur, eligendi illo deleniti cupiditate magni totam laborum fugiat veritatis amet at a aut ea perferendis? Cum.
+            </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae cupiditate a et ipsa saepe odio, tempore repellat reprehenderit totam laudantium. Perferendis id, inventore exercitationem amet obcaecati suscipit facere itaque totam incidunt rerum, aut excepturi, alias ea sint dolor sunt eveniet.
+          </p>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="about-page">
+    <div class="section-heading">
+        <div class="line-dec"></div>
+        <h1>Contact Us</h1>
+    </div>
+    <div class="row" style="padding: 5 px;">
+        <div class="col-md-6" style="background-color: rgb(224, 220, 220);">
+          <h3 style="float: right;">Email</h3>
+            <br>
+            <br>
+            <br>
+            <hr>
+
+            <!-- <div class="col-md-12">
+                <label>Your email id</label>
+                <input style="width: 50 px;" type="text" [(ngModel)]="semail" semail="semail" [ngModelOptions]="{standalone: true}" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label>Your password</label>
+                <input style="width: 50 px;" type="password" [(ngModel)]="spw" spw="spw" [ngModelOptions]="{standalone: true}" class="form-control">
+            </div> -->
+            <p> Leave an email to us , With your name details : </p>
+            <div class="col-md-12">
+                <label>Message</label>
+                <input style="width: 50 px;" type="text" [(ngModel)]="msg" msg="msg" [ngModelOptions]="{standalone: true}" class="form-control">
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-danger" (click)="sendMail()" style="display: block; margin: 0 auto; margin-bottom: 25px;">Send email</button>
+
+
+        </div>
+        <div class="col-md-6" style="background-color: rgb(204, 193, 193);">
+          <h3 style="float: right;">Phone Details</h3>
+          <br>
+          <br>
+          <br>
+          <hr>
+          <div>
+          <h3 >Phone Number</h3>
+          <h6 >+91 7990274651</h6>
+          </div>
+          <br>
+          <div>
+              <p>If you have any queries and doubts related to access of the your rentkaro account. And in some way your privacy is not secured by us or in case of fraud you can contact us .</p>
+              <hr>
+              <h3 >Contact name </h3>
+              <h6 >Vaishvik k. brahmbhatt</h6>
+          </div>
+
+
+        </div>
+  </div>
+</div>
+
+<br>

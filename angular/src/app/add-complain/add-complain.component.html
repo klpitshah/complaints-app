@@ -1,0 +1,62 @@
+<br>
+<div class="container" *ngIf="!flag">
+  <div class="row">
+    <div class="col-10">
+      <div class="jumbotron">
+        <h2> Add your complain  ,  {{user?.username}}  : </h2>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item">NAME : {{user?.name}}</li>
+            <li class="list-group-item">EMAIL : {{user?.email}}</li> 
+        </ul>  
+        <br>
+        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+          <div class="form-group">
+            <label for="complainName">Complain Name</label>
+            <input type="complainName" class="form-control"  formControlName="complainName" [ngClass]="{'is-invalid':form.get('complainName').touched && form.get('complainName').invalid}" />
+            <div *ngIf="form.get('complainName').touched && form.get('complainName').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('complainName').errors.required">complainName is required</div>
+            </div>   
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="city" class="form-control"  formControlName="city" [ngClass]="{'is-invalid':form.get('city').touched && form.get('city').invalid}" />
+            <div *ngIf="form.get('city').touched && form.get('city').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('city').errors.required">city is required</div>
+            </div>   
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="type">Type</label>
+            <input type="type" class="form-control"  formControlName="type" [ngClass]="{'is-invalid':form.get('type').touched && form.get('type').invalid}" />
+            <div *ngIf="form.get('type').touched && form.get('type').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('type').errors.required">type is required</div>
+            </div>   
+          </div> -->
+          <div class="form-group">
+              <label for="type">Type</label>
+             <select class="form-control" formControlName="type" [ngClass]="{'is-invalid':form.get('type').touched && form.get('type').invalid}" required  >
+               <option value=""> Choose Type Of Your Complain</option>
+               <option *ngFor="let t of categories">{{t}}</option>
+             </select>
+            </div>
+
+          <div class="form-group">
+            <label for="area">Area </label>
+            <input type="area" class="form-control"  formControlName="area" [ngClass]="{'is-invalid':form.get('area').touched && form.get('area').invalid}" />
+            <div *ngIf="form.get('area').touched && form.get('area').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('area').errors.required">area is required</div>
+            </div>   
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" style="display: block; margin: 0 auto; display: flex;
+            justify-content: center;
+            align-items: center;" [disabled]="!form.valid"> ADD COMPLAIN </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

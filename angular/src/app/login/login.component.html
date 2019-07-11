@@ -1,0 +1,80 @@
+<div class="jumbotron text-center">
+  <h2 class="page-header">Login</h2>
+</div>
+
+<div style="width:600px; margin:auto;" *ngIf="!flag">
+  <div class="row">
+    <div class="col-10">
+      <div class="jumbotron">
+        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="username" class="form-control"  formControlName="username" [ngClass]="{'is-invalid':form.get('username').touched && form.get('username').invalid}" />
+            <div *ngIf="form.get('username').touched && form.get('username').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('username').errors.required">username is required</div>
+              <!-- <div *ngIf="form.get('username')?.errors?.notAUniqueUsernameLogin">Registred username</div> -->
+            </div>   
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control"  formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+            <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('password').errors.required">Password is required</div>
+              <div *ngIf="form.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+            </div>   
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-primary"  [disabled]="!form.valid"> Login </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<div *ngIf="flag">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <div class="jumbotron">
+          <h2> Change Password of your account : </h2>
+          <form name="form2" [formGroup]="form2" (ngSubmit)="form2.valid && onSubmit2()">
+            <div class="form-group">
+              <label for="username2">Username of the account</label>
+              <input type="username2" class="form-control"  formControlName="username2" [ngClass]="{'is-invalid':form2.get('username2').touched && form2.get('username2').invalid}" />
+              <div *ngIf="form2.get('username2')?.touched && form2.get('username2').invalid"  class="invalid-feedback">
+                <div *ngIf="form2.get('username2').errors.required">username2 is required</div>
+              </div>   
+            </div>
+  
+            <div class="form-group">
+              <label for="password2">New Password</label>
+              <input type="password" class="form-control"  formControlName="password2" [ngClass]="{'is-invalid':form2.get('password2')?.touched && form2.get('password2').invalid}" />
+              <div *ngIf="form2.get('password2')?.touched && form2.get('password2').invalid"  class="invalid-feedback">
+                <div *ngIf="form2.get('password2').errors.required">Password is required</div>
+                <div *ngIf="form2.get('password2').errors.minlength">Password  must be a letaset 6 charector</div>
+              </div>   
+            </div>
+
+            <div class="form-group">
+              <label for="password3">Confirm Your New Password</label>
+              <input type="password" class="form-control"  formControlName="password3" [ngClass]="{'is-invalid':form2.get('password3')?.touched && form2.get('password3').invalid}" />
+              <div *ngIf="form2.get('password3')?.touched && form2.get('password3').invalid"  class="invalid-feedback">
+                <div *ngIf="form2.get('password3').errors.required">Re password is required</div>
+                <div *ngIf="form2.get('password3').errors.minlength">Re password  must be a letaset 6 charector</div>
+              </div>   
+            </div>
+            <a (click)="changePassword()" style=" color : red;float: right; cursor: pointer;"> Go back to LOGIN page </a>
+
+            <div class="form-group">
+              <button class="btn btn-primary"  [disabled]="!form2.valid"> Change Password </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div> -->

@@ -1,0 +1,103 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+table {
+  width: 100%;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+  }
+
+  progress {
+    text-align: center;
+  }
+  progress:after {
+    content: attr(value)'%';
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 1em;
+    grid-auto-rows: minmax(100px,auto);
+    border: rgb(6, 63, 58) 3px solid;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  
+  .imgEdit {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+  }
+  
+  .wrapper2 {
+     display: grid;
+     grid-template-rows: 0.6fr 0.25fr 0.15fr;
+     grid-gap: 0.26em;
+  }
+  .wrapper > div{
+    background: #adc2fc;
+    padding: 1em;
+    border: rgb(3, 2, 3) 2px solid;
+  
+  }
+  .wrapper > div:nth-child(odd){
+    background: #a7adff;
+    /* padding-right: 1em;
+    padding-left: 1em; */
+  }
+  
+  .wrapper > img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .myFooter{
+    background-color: rgb(12, 1, 110) ;
+    padding: 0%;
+    padding-bottom: 0em;
+  }
+  
+  .myFooter > P {
+    color: rgb(247, 247, 247);
+    
+  }
+  
+  .carousel{
+    background: #040607;
+    margin-top: 20px;
+  }
+  .carousel .item{
+    min-height: 280px; 
+  }
+  .carousel .item img{
+    margin: 0 auto; 
+  }
+  .bs-example{
+  margin: 20px;
+  }
+  
+  
+  div button {
+    float: right;
+  }

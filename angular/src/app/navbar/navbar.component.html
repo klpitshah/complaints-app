@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: black">
+  <!-- <a class="navbar-brand" [routerLink]="['/']">THE COMPLAIN APP</a> -->
+  <a class="navbar-brand" href="#">
+    <img src="http://pngimg.com/uploads/broom/broom_PNG11.png" alt="da-iict"  height="50" width="50" class="rounded-circle center">
+  </a>
+  <!-- https://seeklogo.com/images/S/swach-bharat-abhiyan-logo-73C3F61EA8-seeklogo.com.png -->
+  <button class="navbar-toggler" type="button" (click)="toggleNav()"  data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02" [ngClass]="{ 'show' : navbarOpen}">
+      <ul class="nav navbar-nav navbar-left">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink] = "['/']">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+      </ul>
+    <ul class="navbar-nav ml-auto">
+      <!-- <li class="nav-item active"   [routerLinkActive]="['active']" >
+        <a class="nav-link" [routerLink]="['/']" >Home <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li class="nav-item" *ngIf="!authService.loggedIn()"   [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/Login']">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!authService.loggedIn()"   [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/Register']">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.loggedIn()"   [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/Profile',usernameOfUser]">Profile</a>
+      </li>
+      <li class="nav-item"  [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/aboutUs']" style="cursor: pointer;">About-us</a>
+    </li>
+      <li class="nav-item" *ngIf="authService.loggedIn()"   [routerLinkActive]="['active']">
+          <a class="nav-link"  (click)="onLogout()" style="cursor: pointer;">Logout</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>    

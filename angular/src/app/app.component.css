@@ -1,0 +1,130 @@
+
+
+/* Footer Style */
+.footer {
+	text-align: center;
+}
+.footer ul {
+	padding: 0px;
+	margin: 0px;
+}
+.footer ul li {
+	list-style: none;
+	display: inline-block;
+}
+.footer .logo img {
+	max-width: 100%;
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+.footer .footer-menu {
+	margin-bottom: 40px;
+}
+.footer .footer-menu ul li {
+	margin: 0px 15px;
+}
+.footer .footer-menu a {
+	font-size: 13px;
+	color: #7a7a7a;
+	text-transform: uppercase;
+	transition: all 0.5s;
+}
+.footer .footer-menu a:hover {
+	color: #3a8bcd;
+	text-decoration: none;
+}
+.footer .social-icons {
+	margin-bottom: 60px;
+}
+.footer .social-icons ul li {
+	margin: 0px 10px;
+}
+.footer .social-icons a {
+	width: 32px;
+	height: 32px;
+	color: #fff;
+	background-color: #aaa;
+	text-align: center;
+	display: inline-block;
+	line-height: 33px;
+	border-radius: 50%;
+	font-size: 13px;
+	transition: all 0.5s;
+}
+.footer .social-icons a:hover {
+	background-color: #3a8bcd;
+}
+
+/* Sub Footer Style */
+.sub-footer {
+	border-top: 1px solid #eee;
+	text-align: center;
+}
+.sub-footer p {
+	font-size: 12px;
+	color: #7a7a7a;
+	line-height: 60px;
+}
+.sub-footer a {
+	color: #3a8bcd;
+	text-decoration: none;
+}
+
+#h-verified {
+    height: 330px;
+}
+
+.container-2 {
+    position: relative;
+    width: 950px;
+    margin: auto;
+    padding: 85px 0;
+    font-family: Roboto,sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #333333;
+}
+
+#h-verified-bg {
+    height: 512px;
+    padding: 0;
+	margin: 0;
+	/* height: 100%; */
+	widows: 100px;
+	background-image: url('http://blog.pixel.ir/wp-content/uploads/2015/11/lkjhg-1024x512.png') ;
+	background-repeat: none;
+	background-size: cover;
+    /* background: #666666 url("https://tse1.mm.bing.net/th?id=OIP.ih05WGZYfVpSR9AvOWZ-OwHaDt&pid=Api&P=0&w=326&h=164") no-repeat center center; */
+    color: #ffffff;
+}
+
+.cta {
+    float: left;
+    width: 31%;
+    padding: 0 1%;
+    text-align: center;
+}
+
+
+#myBtn {
+	/* display: none; Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: rgb(15, 13, 13); /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 15px; /* Some padding */
+	border-radius: 10px; /* Rounded corners */
+	font-size: 18px; /* Increase font size */
+	/* background-image: url("https://tse4.mm.bing.net/th?id=OIP.NWL6to9G5oBYIOvbH6e64wHaHa&pid=Api&P=0&w=300&h=300") */
+	
+  }
+  
+  #myBtn:hover {
+	background-color: #555; /* Add a dark-grey background on hover */
+  } 
+  
