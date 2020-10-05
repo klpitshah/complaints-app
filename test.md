@@ -1,0 +1,1 @@
+You can configure Apache Zeppelin with both environment variables in conf/zeppelin-env.sh (conf\zeppelin-env.cmd for Windows) and Java properties in conf/zeppelin-site.xml. If both are defined, then the environment variables will take priority.
